@@ -8,7 +8,6 @@
 
   <div class="navbar"  style="background-image: url({% static 'images/HD.jpg' %}) ; ">
     <nav >
-        <h2 class="logo">IOT</h2>
 
             <ul>
                    <li>  <a href="{% url 'table' %}" >Table</a></li>
@@ -17,6 +16,17 @@
                     <li>  <a href="{% url 'json' %}" >Json</a></li>
 
             </ul>
+
+            <form method="post" action="{% url 'index_view' %}">
+                {% csrf_token %}
+
+                <select id="select" name="select_field">
+
+                  <option value="signup" selected>S'inscrire</option>
+                  <option value="logout">Se déconnecter</option>
+                </select>
+
+              </form>
             <p> </p>
 
 
